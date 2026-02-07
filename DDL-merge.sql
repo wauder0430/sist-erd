@@ -92,8 +92,8 @@ CREATE TABLE LECTURE(
 
 
 --컴퓨터 상태
-DROP SEQUENCE computerStatus_SEQ;
-CREATE SEQUENCE computerStatus_SEQ;
+DROP SEQUENCE computer_Status_SEQ;
+CREATE SEQUENCE computer_Status_SEQ;
 DROP TABLE COMPUTER_STATUS;
 create table COMPUTER_STATUS(
     computerStatusSeq number,
@@ -281,7 +281,7 @@ create table OPENED_SUBJECT(
     openedSubjectStartDate date,
     openedSubjectEndDate date,
     registeredCourseSeq number not null,
-    subjectSeq number not null,
+    subjectSeq number,
 
     constraint openedSubjectSeq_pk primary key (openedSubjectSeq),
     constraint openedSubject_registeredCourseSeq_fk foreign key (registeredCourseSeq) references REGISTERED_COURSE(registeredCourseSeq),
@@ -526,8 +526,8 @@ CREATE TABLE ATTENDANCE(
 );
 
 -- 사물함 개인배정
-DROP SEQUENCE personalLocker_SEQ;
-CREATE SEQUENCE personalLocker_SEQ;
+DROP SEQUENCE personal_Locker_SEQ;
+CREATE SEQUENCE personal_Locker_SEQ;
 drop table PERSONAL_LOCKER;
 
 CREATE TABLE PERSONAL_LOCKER(
@@ -543,12 +543,12 @@ CREATE TABLE PERSONAL_LOCKER(
 );
 
 -- 컴퓨터 개인배정
-DROP SEQUENCE personalComputer_SEQ;
-CREATE SEQUENCE personalComputer_SEQ;
+DROP SEQUENCE personal_Computer_SEQ;
+CREATE SEQUENCE personal_Computer_SEQ;
 drop table PERSONAL_COMPUTER;
 CREATE TABLE PERSONAL_COMPUTER(
     personalComputerSeq NUMBER,
-    personalComputerAllocationDate DATE not not null,
+    personalComputerAllocationDate DATE not null,
     personalComputerEndDate DATE,
     studentSeq NUMBER not null,
     computerSeq NUMBER not null,
@@ -561,8 +561,8 @@ CREATE TABLE PERSONAL_COMPUTER(
 
 -- depth 5
 -- 시험성적
-DROP SEQUENCE testGrade_SEQ;
-CREATE SEQUENCE testGrade_SEQ;
+DROP SEQUENCE test_score_SEQ;
+CREATE SEQUENCE test_score_SEQ;
 drop TABLE TEST_SCORE;
 CREATE TABLE TEST_SCORE(
     testGradeSeq NUMBER,
