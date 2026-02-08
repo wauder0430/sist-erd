@@ -1,0 +1,18 @@
+-- 아래 세팅을 통해 cmd 화면 출력과 오버헤드를 최소화
+
+SET TERMOUT OFF;       -- 화면에 결과를 출력하지 않음 (속도 향상 핵심)
+SET FEEDBACK OFF;      -- 'n행이 생성되었습니다' 메시지 숨김
+SET PAGESIZE 0;        -- 페이지 구분선 제거
+SET LINESIZE 1000;     -- 줄바꿈 최소화
+SET TRIMSPOOL ON;      -- 공백 제거
+
+--------------------------------------------------------------
+-- 데이터 insert 방법
+sqlplus ID/비밀번호@호스트정보 @"파일경로\combined_all.sql"             
+
+-- 호스트 정보 예시: localhost:1521/xe
+-- "파일경로\combined_all.sql" 예시: "C:\myfolder\combined_all.sql"
+-- combined_all.sql(통합문서)만 실행하면 됨.
+
+-- 약한 검증방법
+데이터 삽입 후 select count(*) from ATTENDANCE; 실행시 20077개가 나오면 성공

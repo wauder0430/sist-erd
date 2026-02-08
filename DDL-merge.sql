@@ -52,7 +52,8 @@ create table ATTENDANCE_TYPE(
     attendanceTypeState varchar2(20) not null,
 
     constraint attendanceTypeSeq_pk primary key (attendanceTypeSeq),
-    constraint attendanceTypeSeq_limit check (attendanceTypeSeq in (1, 2, 3, 4, 5, 6))
+    constraint attendanceTypeSeq_limit check (attendanceTypeSeq in (1, 2, 3, 4, 5, 6)),
+    constraint attendance_type_uq UNIQUE (attendanceTypeState)
 );
 
 
@@ -231,8 +232,8 @@ CREATE TABLE USERS(
     usersAddress varchar2(150) not null ,
     usersSSN varchar2(14) unique not null ,
     usersTel varchar2(30) not null ,
-    usersId varchar2(20) unique not null ,
-    usersPw varchar2(20) not null, --트리거 필요!!!!!!!!!!!!!
+    usersID varchar2(20) unique not null ,
+    usersPW varchar2(20) not null, --트리거 필요!!!!!!!!!!!!!
     authoritySeq number not null ,
 
     constraint users_pk primary key(usersSeq),
