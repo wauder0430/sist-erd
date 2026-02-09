@@ -191,7 +191,7 @@ CREATE TABLE AFFILIATED_INSTRUCTOR
 
     -- 외래키
     instructorSeq number not null, -- 교사 번호
-    authoritySeq number, -- 권한 번호
+    authoritySeq number default 2, -- 권한 번호
 
     -- 제약 조건
     CONSTRAINT affiliatedInstructor_pk primary key (affiliatedInstructorSeq),
@@ -213,7 +213,7 @@ CREATE TABLE ADMIN
     adminPW varchar2(20) not null, -- PW
 
     -- 외래키
-    authoritySeq number not null,
+    authoritySeq number default 1,
 
     -- 제약조건
     CONSTRAINT admin_pk primary key (adminSeq),
@@ -234,7 +234,7 @@ CREATE TABLE USERS(
     usersTel varchar2(30) not null ,
     usersID varchar2(20) unique not null ,
     usersPW varchar2(20) not null, --트리거 필요!!!!!!!!!!!!!
-    authoritySeq number not null ,
+    authoritySeq number default 3 ,
 
     constraint users_pk primary key(usersSeq),
     constraint users_auth_fk foreign key (authoritySeq) REFERENCES AUTHORITY(authoritySeq),
@@ -255,6 +255,8 @@ CREATE TABLE COMPUTER(
     constraint computer_status_fk foreign key (computerStatusSeq) references COMPUTER_STATUS(computerStatusSeq),
     constraint computer_lecture_fk foreign key (lectureSeq) references LECTURE(lectureSeq)
 );
+ALTER TABLE COMPUTER
+ADD usedComputer varchar2(20);
 
 
 -- depth 3
