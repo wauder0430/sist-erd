@@ -44,4 +44,4 @@
 * [Figma](https://www.figma.com/board/2knJ53yzUDsFcCcwiTZi3I/%EC%8C%8D%EC%9A%A9_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%88%9C%EC%84%9C%EB%8F%84?node-id=0-1&p=f&t=QY6NeJoRLTzjSkC7-0)
 * [미러](https://miro.com/app/board/uXjVGFSPCio=/?focusWidget=3458764658451438176)
 * [구글시트](https://docs.google.com/spreadsheets/d/1iDf5nvFfqeC9H3Cg0MeIcoP9Qcw9psDoTNigeyyj_Fo/edit?gid=1978695088#gid=1978695088)
-* \[폰트](http://font.woowahan.com/jua/)
+* [폰트](http://font.woowahan.com/jua/)
