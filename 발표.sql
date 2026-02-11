@@ -1,6 +1,6 @@
 -- 유저가 가입
 -- authority 생략, default값인 권한 3으로 들어감
-select * from users ORDER BY USERSSEQ DESC;
+select * from users ORDE  R BY USERSSEQ DESC;
 -- 401번 김민준 가입
 INSERT INTO USERS (USERSSEQ, USERSNAME, USERSADDRESS, USERSSSN, USERSTEL, USERSID, USERSPW) VALUES (USERS_SEQ.nextval, '김민준', '제주특별자치도 제주시 첨단로 242', '910203-1240213', '010-4125-1255', 'dijwkrhj13', '@3123wqdzas12');
 select * from users ORDER BY USERSSEQ DESC; -- 401번 김민준 가입 결과
@@ -17,11 +17,6 @@ select * from users ORDER BY USERSSEQ DESC;
 -- 얘는 초기화 무시
 DROP SEQUENCE USERS_SEQ;
 CREATE SEQUENCE USERS_SEQ
-
-
-
-
-    
 START WITH 401;
 delete from users where USERSSEQ = 401;
 commit;
